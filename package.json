@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jfoshee/hello-asc-wasm/issues"
   },
-  "homepage": "https://github.com/jfoshee/hello-asc-wasm#readme"
+  "homepage": "https://github.com/jfoshee/hello-asc-wasm#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.27.29"
+  }
 }
