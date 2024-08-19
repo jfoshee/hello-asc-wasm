@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<script type="module">
-import { add } from "./build/release.js";
-document.body.innerText = add(1, 2);
-</script>
+  <!-- Loading via module built from ASC:
+    <script type="module">
+      import { add } from "./build/release.js";
+      document.body.innerText = add(1, 2);
+    </script> 
+-->
+  <script>
+    // https://developer.mozilla.org/en-US/docs/WebAssembly/Loading_and_running#running_your_webassembly_code
+    // https://developer.mozilla.org/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming_static
+    let importObject = {};
+    WebAssembly.instantiateStreaming(fetch("./build/release.wasm"), importObject).then(
+      (obj) => {
+        // Call an exported function:
+        const add = obj.instance.exports.add;
+        console.log(add(1, 1));
+        console.log(add(2, 2));
+        console.log(add(13, 1300));
+        document.body.innerText = "1 + 2 = " + add(1, 2);
+      },
+    );
+  </script>
 </head>
+
 <body></body>
+
 </html>
