@@ -1,0 +1,19 @@
+{
+  "name": "hello-asc-wasm",
+  "version": "1.0.0",
+  "description": "Learning how to build a wasm module and load it in the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfoshee/hello-asc-wasm.git"
+  },
+  "author": "jfoshee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfoshee/hello-asc-wasm/issues"
+  },
+  "homepage": "https://github.com/jfoshee/hello-asc-wasm#readme"
+}
